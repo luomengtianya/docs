@@ -1,6 +1,6 @@
 <!-- docs/_sidebar.md -->
 
-* 首页
+* [首页](/)
 
 * [后端研发](./backend/index.md)
 
