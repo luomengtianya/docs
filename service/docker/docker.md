@@ -250,17 +250,14 @@ GOOS=linux go build -mod vendor
 * 按 i 切换至编辑模式，添加如下内容
 ```text
 FROM alpine:latest  # 基础镜像
-
 RUN mkdir -p /data/service/blog/bin # 执行命令,每次执行都会多一层镜像，可用 && 合并执行命令
 ADD blog /data/service/blog/bin  # 添加文件
 WORKDIR  /data/service/blog  # 设置工作目录
-
 EXPOSE 8888  # 声明端口
-
 EXPOSE 8080
-
 CMD ./bin/blog # 
 ```
+
 * 按 Esc，输入 :wq，保存文件并返回
 
 * 执行以下命令，构建镜像
@@ -530,4 +527,6 @@ apt install wget
 apt install iputils-ping
 apt install net-tools
 ```
+
+
 
