@@ -81,7 +81,9 @@ rm -rf ~/Library/Logs/IntelliJIdea
   groovyScript("return \"${_1}\" == 'void' ? null : ' * @return ' + \"${_1}\"", methodReturnType())
   ```
 
-  
+* 使用
+
+  ！>  方法名上添加 `/**`后按回车键(具体按照 `Expand with`的实际配置)
 
 ### 渲染注释
 
