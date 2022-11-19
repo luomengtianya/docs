@@ -61,11 +61,11 @@ rm -rf ~/Library/Logs/IntelliJIdea
   ```
   **
    * Description $describe$
-   * 
+  $params$
+  $return$        
    * @author panjianghong
    * @since $date$ $time$
-  $params$
-  $return$
+   * @version 1.0.0
    */
   ```
 
