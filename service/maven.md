@@ -207,7 +207,65 @@ maven 打包：mvn package
 
 
 
+## maven的内置属性
 
+## 内置属性
+
+Maven预定义属性，用户可以直接使用
+
+```
+${basedir}表示项目的根路径，即包含pom.xml文件的目录
+${version}表示项目版本
+${project.basedir}同${basedir}
+${project.baseUri}表示项目文件地址
+${maven.build.timestamp}表示项目构建开始时间
+${maven.build.timestamp.format}表示${maven.build.timestamp}的展示格式，默认值为yyyyMMdd-HHmm
+```
+
+### pom属性
+
+使用pom属性可以引用到pom.xml文件中对应元素的值
+```
+${project.build.sourceDirectory} 表示主源码路径，默认为src/main/java/
+${project.build.testSourceDirectory} 表示测试源码路径，默认为src/test/java/
+${project.build.directory} 表示项目构建输出目录，默认为target/
+${project.outputDirectory} 表示项目测试代码编译输出目录，默认为target/classes/
+${project.groupId} 表示项目的groupId
+${project.artifactId} 表示项目的artifactId
+${project.version} 表示项目的version，同${version}
+${project.build.finalName} 表示项目打包输出文件的名称,默认为${project.artifactId}${project.version}
+```
+
+### 自定义属性
+
+在pom.xml文件的<properties>标签下定义的Maven属性
+```
+　定义属性：
+ <project>
+   <properties>
+   	 <mysql.version>5.6.32</mysql.version>
+   </properties>
+ </project>
+ 使用属性：
+ <dependency>
+   <groupId>mysql</groupId>
+   <artifactId>mysql-connector-java</artifactId>
+   <version>${mysql.version}</version>
+ </dependency>
+```
+
+### 其它属性
+
+```
+${settings.localRepository}表示本地仓库的地址
+mvn help:system 可以查看所有的Java属性
+System.getProperties() 可以得到所有的Java属性
+${user.home} 表示用户目录
+mvn help:system 可查看所有的环境变量
+${env.JAVA_HOME} 表示JAVA_HOME环境变量的值
+```
+
+　　　
 
 
 

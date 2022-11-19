@@ -56,7 +56,7 @@ rm -rf ~/Library/Logs/IntelliJIdea
 
 
 
-* 模板 *注意模板不能以 / 开头* 不然param会获取不到 ,` $params$`顶格写
+* 模板 *注意模板不能以 / 开头* 不然param会获取不到 ,` $params$`顶格写，第一个`*`也需要定格写
 
   ```
   **
@@ -78,7 +78,7 @@ rm -rf ~/Library/Logs/IntelliJIdea
 * return
 
   ```
-  groovyScript("return \"${_1}\" == 'void' ? null : \"${_1}\"", methodReturnType())
+  groovyScript("return \"${_1}\" == 'void' ? null : ' * @return ' + \"${_1}\"", methodReturnType())
   ```
 
   
@@ -108,3 +108,30 @@ rm -rf ~/Library/Logs/IntelliJIdea
 ## idea闪退(Mac)
 
 !> 进入软件包管理 `/Applications/IntelliJ IDEA.app/Contents/MacOS` 打开 `idea` 文件，会记录闪退原因的信息
+
+
+
+## idea连接数据库，限制查询行数
+
+执行sql语句的时候，若是没有加分页条件，会默认查询500行数据，影响效率，这里可以设置每次查询的数据行数，提升查询速度。
+
+![截屏2022-11-09 11.32.42](idea.assets/%E6%88%AA%E5%B1%8F2022-11-09%2011.32.42.png)
+
+
+
+
+
+## go高版本泛型报错`Cannot use 'err' (type error) as the type any`
+
+添加插件 	`go` 和  `go template`
+
+![image-20221112153439975](idea.assets/image-20221112153439975.png)
+
+
+
+## @Autowired修改提示级别
+
+设置 - Edit – Inspections
+
+![截屏2022-11-16 17.20.21](idea.assets/%E6%88%AA%E5%B1%8F2022-11-16%2017.20.21.png)
+

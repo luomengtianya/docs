@@ -180,3 +180,35 @@ rm -rf /opt/cni
 rm -rf /var/lib/etcd
 rm -rf /var/etcd
 ```
+
+
+
+## shell的栈操作
+
+此命令应用在频繁切换目录的场景上非常方便
+
+* `dirs  -v` 查询当前栈数
+* `pushd` 进入目录/栈
+* `popd ` 退出目录/栈
+
+```
+panjianghong@panjianongdeMBP demo % dirs -v
+0       ~/demo
+panjianghong@panjianongdeMBP demo % pushd demo-gateway 
+~/demo/demo-gateway ~/demo
+panjianghong@panjianongdeMBP demo-gateway % dirs -v
+0       ~/demo/demo-gateway
+1       ~/demo
+panjianghong@panjianongdeMBP demo-gateway % pushd src 
+~/demo/demo-gateway/src ~/demo/demo-gateway ~/demo
+panjianghong@panjianongdeMBP src % dirs -v
+0       ~/demo/demo-gateway/src
+1       ~/demo/demo-gateway
+2       ~/demo
+panjianghong@panjianongdeMBP src % pushd -0      #会退到原始位置
+panjianghong@panjianongdeMBP demo % 
+
+```
+
+  
+

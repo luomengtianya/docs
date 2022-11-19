@@ -219,5 +219,112 @@ ServerAliveInterval 5
 
 `/etc/ssh/` 目录下除了`ssh_config`之外，还有一个`sshd_config`，二者的区别在于，前者是针对**客户端**的配置文件，后者是针对**服务端**的文件
 
+### 
+
+### 更新系统后，软件栏会有一个带问号的系统图标
+
+```
+按住option再点击 X 就可以删除
+
+如果是空白图标，可在终端执行以下命令
+
+defaultswritecom.apple.dockResetLaunchPad-boolTRUE
+killallDock
+```
+
+## zsh添加插件
+
+```shell
+# 创建插件存放文件夹并进入
+mkdir -p ~/.zsh/custom/plugin && cd ~/.zsh/custom/plugin
+
+# 下载插件
+git clone git@github.com:zsh-users/zsh-autosuggestions.git
+git clone git@github.com:zsh-users/zsh-syntax-highlighting.git
+
+# 添加环境变量
+vim ～/.zshrc
+
+  source ~/.zsh/custom/plugin/zsh-autosuggestions
+  source ~/.zsh/custom/plugin/zsh-syntax-highlighting
+
+# 保存后执行
+
+source ～/.zshrc
+
+```
+
+## Mac m1安装golang
+
+* 下载地址 https://www.gomirrors.org
+* 下载 `go1.19.3.darwin-arm64.pkg` 的 `arm64`版本
+* 安装好之后查看go的版本和环境变量
+
+```
+# 查看版本
+go version
+
+# 查看环境变量
+go env
+```
 
 
+
+## Github 国内加速访问
+
+### Mac 修改方法:
+
+#### 修改 /etc/hosts:
+
+- 特别提醒:
+  - 网上找到的 host, 不要轻易添加.
+  - 先通过 ping 查看一下. 是否 ping 的通, 且速度是否够快.
+  - 添加了 不同的 host IP, 反而会使访问速度更慢.
+  - 上述 IP, 是在联通网络下, 访问非常快. 使用前, 请自行测试.
+- 添加如下内容:
+
+```
+###################################
+#       Github:
+###################################
+103.245.222.249 github.global.ssl.fastly.net
+
+103.245.222.133 assets-cdn.github.com
+23.235.47.133   assets-cdn.github.com
+
+185.31.19.133   avatars1.githubusercontent.com
+```
+
+#### 修改 /etc/resolv.conf
+
+- 添加如下内容:
+
+```
+# add for github:
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+nameserver 114.114.114.114
+```
+
+#### 刷新 NDS, 使之生效:
+
+```
+sudo dscacheutil -flushcache
+```
+
+### Linux 修改方法:
+
+- 同样修改:
+  - /etc/hosts
+  - /etc/resolv.conf
+- 刷新启动命令:
+
+```
+sudo /etc/init.d/networking restart
+```
+
+### 参考:
+
+- [GitHub加速访问](http://chenxuhua.com/technology/githubjia-su-fang-wen)
+- [Github访问很慢的解决方法](http://www.jianshu.com/p/a578963f10f0)
+- [GtiHub访问慢解决办法](https://segmentfault.com/a/1190000004171536)
