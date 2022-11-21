@@ -265,12 +265,14 @@ mvn help:system 可查看所有的环境变量
 ${env.JAVA_HOME} 表示JAVA_HOME环境变量的值
 ```
 
-　　　
 
 
+## Maven插件已下载，但是pom.xml中依然有红杠
 
+!> 有时候，pom里面某个以来总是红色的，不管怎么重新导入，设置以来仓库，都不能解决。但是在本地仓库中，又可以看到这个包已经被下载下来了，这种问题可能是缓存导致的，删除缓存即可
 
+`File -> Invalidate Caches -> 选择需要清除的 -> 点击 “Invalidate and Restart”`
 
- 
+![image-20221119220306853](maven.assets/image-20221119220306853.png)
 
- 
+ 重启之后会发现红色的依赖变正常了

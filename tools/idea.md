@@ -56,7 +56,7 @@ rm -rf ~/Library/Logs/IntelliJIdea
 
 
 
-* 模板 *注意模板不能以 / 开头* 不然param会获取不到 ,` $params$`顶格写，第一个`*`也需要定格写
+* 模板 *注意模板不能以 / 开头* 不然param会获取不到 ,` $params$`顶格写，第一个`*`也需要顶格写
 
   ```
   **
@@ -97,11 +97,11 @@ rm -rf ~/Library/Logs/IntelliJIdea
 
 * 旧版本
 
-![image-20221104234804056](idea.assets/image-20221104234804056.png)
+![image-20221121201924148](idea.assets/image-20221121201924148.png)
 
 
 
-## 自动移除导入单位使用的包
+## 自动移除导入但未使用的包
 
 ![image-20221028105107115](idea.assets/009.png)
 
